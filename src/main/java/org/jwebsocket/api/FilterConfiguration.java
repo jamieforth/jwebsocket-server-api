@@ -24,19 +24,19 @@ import java.util.Map;
  */
 public interface FilterConfiguration extends Configuration {
 
-        String getJar();
+    String getJar();
 
-        String getPackageName();
+    String getPackageName();
 
-        String getNamespace();
+    String getNamespace();
 
-        List<String> getServers();
+    List<String> getServers();
 
-        Map<String, String> getSettings();
+    Map<String, String> getSettings();
 
-        /**
-         * returns the enabled status of the plug-in.
-         * @return
-         */
-        boolean getEnabled();
+    /**
+     * returns the enabled status of the plug-in.
+     * @return
+     */
+    boolean getEnabled();
 }

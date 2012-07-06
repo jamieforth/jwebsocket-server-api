@@ -1,17 +1,17 @@
-//        ---------------------------------------------------------------------------
-//        jWebSocket - Copyright (c) 2010 jwebsocket.org
-//        ---------------------------------------------------------------------------
-//        This program is free software; you can redistribute it and/or modify it
-//        under the terms of the GNU Lesser General Public License as published by the
-//        Free Software Foundation; either version 3 of the License, or (at your
-//        option) any later version.
-//        This program is distributed in the hope that it will be useful, but WITHOUT
-//        ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-//        FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
-//        more details.
-//        You should have received a copy of the GNU Lesser General Public License along
-//        with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
-//        ---------------------------------------------------------------------------
+//    ---------------------------------------------------------------------------
+//    jWebSocket - Copyright (c) 2010 jwebsocket.org
+//    ---------------------------------------------------------------------------
+//    This program is free software; you can redistribute it and/or modify it
+//    under the terms of the GNU Lesser General Public License as published by the
+//    Free Software Foundation; either version 3 of the License, or (at your
+//    option) any later version.
+//    This program is distributed in the hope that it will be useful, but WITHOUT
+//    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+//    FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+//    more details.
+//    You should have received a copy of the GNU Lesser General Public License along
+//    with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
+//    ---------------------------------------------------------------------------
 package org.jwebsocket.api;
 
 import java.util.List;
@@ -39,51 +39,51 @@ import org.jwebsocket.config.JWebSocketConfig;
  */
 public interface WebSocketInitializer {
 
-        /**
-         * Initializes the loggins sub system
-         */
-        void initializeLogging();
+    /**
+     * Initializes the loggins sub system
+     */
+    void initializeLogging();
 
-        /**
-         * Initialize the libraries
-         */
-        ClassLoader initializeLibraries();
+    /**
+     * Initialize the libraries
+     */
+    ClassLoader initializeLibraries();
 
-        /**
-         * Initialize the engine
-         *
-         * @return the initialized engine, which is ready to start
-         */
-        Map<String, WebSocketEngine> initializeEngines();
+    /**
+     * Initialize the engine
+     *
+     * @return the initialized engine, which is ready to start
+     */
+    Map<String, WebSocketEngine> initializeEngines();
 
-        /**
-         * Initialize the servers, these initialized servers will not have plugins
-         * initialized in plugin chain.
-         *
-         * @return the list of initialized servers ready to start
-         */
-        List<WebSocketServer> initializeServers();
+    /**
+     * Initialize the servers, these initialized servers will not have plugins
+     * initialized in plugin chain.
+     *
+     * @return the list of initialized servers ready to start
+     */
+    List<WebSocketServer> initializeServers();
 
-        /**
-         * Initialize the plugins specific to server ids.
-         *
-         * @return the FastMap of server id to the list of plugins associated with
-         * it.
-         */
-        Map<String, List<WebSocketPlugIn>> initializePlugins();
+    /**
+     * Initialize the plugins specific to server ids.
+     *
+     * @return the FastMap of server id to the list of plugins associated with
+     * it.
+     */
+    Map<String, List<WebSocketPlugIn>> initializePlugins();
 
-        /**
-         * Initialize the filters specific to the server ids
-         *
-         * @return the FastMap of server id to the list of filters associated with
-         * it.
-         */
-        Map<String, List<WebSocketFilter>> initializeFilters();
+    /**
+     * Initialize the filters specific to the server ids
+     *
+     * @return the FastMap of server id to the list of filters associated with
+     * it.
+     */
+    Map<String, List<WebSocketFilter>> initializeFilters();
 
-        /**
-         * Returns the config object
-         *
-         * @return the jwebsocket config object
-         */
-        JWebSocketConfig getConfig();
+    /**
+     * Returns the config object
+     *
+     * @return the jwebsocket config object
+     */
+    JWebSocketConfig getConfig();
 }

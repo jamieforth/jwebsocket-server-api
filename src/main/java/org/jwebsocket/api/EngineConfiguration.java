@@ -25,88 +25,88 @@ import java.util.Map;
  */
 public interface EngineConfiguration extends Configuration {
 
-        /**
-         * Returns the fully qualified name of the external jar file from which
-         * the engine is loaded. In case, no external library or jar file is used
-         * then this value will return null or empty string.
-         * @return the jar file name or null value
-         */
-        String getJar();
+    /**
+     * Returns the fully qualified name of the external jar file from which
+     * the engine is loaded. In case, no external library or jar file is used
+     * then this value will return null or empty string.
+     * @return the jar file name or null value
+     */
+    String getJar();
 
-        /**
-         * Returns the context for servlet based engines like Jetty
-         * @return the context for servlet based engines, null for native servers
-         */
-        String getContext();
+    /**
+     * Returns the context for servlet based engines like Jetty
+     * @return the context for servlet based engines, null for native servers
+     */
+    String getContext();
 
-        /**
-         * Returns the servlet for servlet based engines like Jetty
-         * @return the servlet for servlet based engines, null for native servers
-         */
-        String getServlet();
+    /**
+     * Returns the servlet for servlet based engines like Jetty
+     * @return the servlet for servlet based engines, null for native servers
+     */
+    String getServlet();
 
-        /**
-         * Returns the name of the key store file
-         * @return the name of the key store file (null or empty for non-ssl engines)
-         */
-        String getKeyStore();
+    /**
+     * Returns the name of the key store file
+     * @return the name of the key store file (null or empty for non-ssl engines)
+     */
+    String getKeyStore();
 
-        /**
-         * Returns the password of the key store file
-         * @return the password of the key store file (null or empty for non-ssl engines)
-         */
-        String getKeyStorePassword();
+    /**
+     * Returns the password of the key store file
+     * @return the password of the key store file (null or empty for non-ssl engines)
+     */
+    String getKeyStorePassword();
 
-        /**
-         * Returns the port at which the engine is running
-         * @return the port number by default it's 8787 for jWebSocket
-         */
-        Integer getPort();
+    /**
+     * Returns the port at which the engine is running
+     * @return the port number by default it's 8787 for jWebSocket
+     */
+    Integer getPort();
 
-        /**
-         * Returns the port at which the SSL encrypted engine is running
-         * @return the port number by default it's 9797 for jWebSocket with SSL
-         */
-        Integer getSSLPort();
+    /**
+     * Returns the port at which the SSL encrypted engine is running
+     * @return the port number by default it's 9797 for jWebSocket with SSL
+     */
+    Integer getSSLPort();
 
-        /**
-         * Engine timeout value in milliseconds
-         * @return timeout value
-         */
-        int getTimeout();
+    /**
+     * Engine timeout value in milliseconds
+     * @return timeout value
+     */
+    int getTimeout();
 
-        /**
-         * The maximum frame size in KB, any data frame with
-         * size greater than this value will cause connection to be terminated
-         * @return the maximum frame size
-         */
-        int getMaxFramesize();
+    /**
+     * The maximum frame size in KB, any data frame with
+     * size greater than this value will cause connection to be terminated
+     * @return the maximum frame size
+     */
+    int getMaxFramesize();
 
-        /**
-         * These are the list of allowed domains for accepting connections for the origin
-         * based security model. Any connection request with different origin than the origins
-         * in this list is not accepted and the connection is terminated immediately.
-         *
-         * @return the list of allowed domains
-         */
-        List<String> getDomains();
-        
-        /**
-         * 
-         * @return The maximum number of connections allowed by this engine
-         */
-        Integer getMaxConnections();
-        
-        /**
-         * The on max connections strategy indicates the procedure to execute
-         * when the maximum number of concurrent connections has been reached.
-         * 
-         * @return The "on max connections" strategy
-         */
-        String getOnMaxConnectionStrategy();
-        
-        /**
-         * @return the settings
-         */
-        Map<String, Object> getSettings();
+    /**
+     * These are the list of allowed domains for accepting connections for the origin
+     * based security model. Any connection request with different origin than the origins
+     * in this list is not accepted and the connection is terminated immediately.
+     *
+     * @return the list of allowed domains
+     */
+    List<String> getDomains();
+    
+    /**
+     * 
+     * @return The maximum number of connections allowed by this engine
+     */
+    Integer getMaxConnections();
+    
+    /**
+     * The on max connections strategy indicates the procedure to execute
+     * when the maximum number of concurrent connections has been reached.
+     * 
+     * @return The "on max connections" strategy
+     */
+    String getOnMaxConnectionStrategy();
+    
+    /**
+     * @return the settings
+     */
+    Map<String, Object> getSettings();
 }

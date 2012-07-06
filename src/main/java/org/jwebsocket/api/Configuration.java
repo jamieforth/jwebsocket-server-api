@@ -21,13 +21,13 @@ package org.jwebsocket.api;
  */
 public interface Configuration {
 
-        /**
-         * @return the id
-         */
-        String getId();
+    /**
+     * @return the id
+     */
+    String getId();
 
-        /**
-         * @return the name 
-         */
-        String getName();
+    /**
+     * @return the name 
+     */
+    String getName();
 }

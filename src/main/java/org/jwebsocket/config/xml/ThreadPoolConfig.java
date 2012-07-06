@@ -30,40 +30,40 @@ public class ThreadPoolConfig implements Config {
   private int blockingQueueSize = 1000;
 
   public ThreadPoolConfig(int aCorePoolSize, int aMaximumPoolSize, int aKeepAliveTime, int aBlockingQueueSize) {
-          this.corePoolSize = aCorePoolSize;
-          this.maximumPoolSize = aMaximumPoolSize;
-          this.keepAliveTime = aKeepAliveTime ;
-          this.blockingQueueSize = aBlockingQueueSize ;
+      this.corePoolSize = aCorePoolSize;
+      this.maximumPoolSize = aMaximumPoolSize;
+      this.keepAliveTime = aKeepAliveTime ;
+      this.blockingQueueSize = aBlockingQueueSize ;
   }
   public ThreadPoolConfig() {
   }
 
   @Override
   public void validate() {
-          if (( corePoolSize > 0)
-                                && (maximumPoolSize > 0)
-                                && (keepAliveTime > 0)
-                                && (blockingQueueSize > 0)) {
-                        return;
-                }
-                throw new WebSocketRuntimeException(
-                                "Missing one of the thread pool configuration, "
-                                + "please check your configuration file");
+      if (( corePoolSize > 0)
+                && (maximumPoolSize > 0)
+                && (keepAliveTime > 0)
+                && (blockingQueueSize > 0)) {
+            return;
+        }
+        throw new WebSocketRuntimeException(
+                "Missing one of the thread pool configuration, "
+                + "please check your configuration file");
   }
 
-        public int getCorePoolSize() {
-                return corePoolSize;
-        }
+    public int getCorePoolSize() {
+        return corePoolSize;
+    }
 
-        public int getMaximumPoolSize() {
-                return maximumPoolSize;
-        }
+    public int getMaximumPoolSize() {
+        return maximumPoolSize;
+    }
 
-        public int getKeepAliveTime() {
-                return keepAliveTime;
-        }
-        public int getBlockingQueueSize() {
-                return blockingQueueSize;
-        }
+    public int getKeepAliveTime() {
+        return keepAliveTime;
+    }
+    public int getBlockingQueueSize() {
+        return blockingQueueSize;
+    }
 
 }

@@ -30,113 +30,113 @@ import org.jwebsocket.kit.WebSocketRuntimeException;
  */
 public final class FilterConfig implements Config, FilterConfiguration {
 
-        private final String mId;
-        private final String mName;
-        private final String mJar;
-        private final String mPackageName;
-        private final String mNamespace;
-        private final List<String> mServers;
-        private final Map<String, String> mSettings;
-        private final boolean mEnabled;
+    private final String mId;
+    private final String mName;
+    private final String mJar;
+    private final String mPackageName;
+    private final String mNamespace;
+    private final List<String> mServers;
+    private final Map<String, String> mSettings;
+    private final boolean mEnabled;
 
-        /**
-         * default constructor
-         * @param id the plugin id
-         * @param name the plugin name
-         * @param jar the plugin jar
-         * @param namespace the namespace 
-         * @param settings map of settings key and value
-         */
-        public FilterConfig(String aId, String aName, String aPackageName, String aJar, String aNamespace,
-                        List<String> aServers, Map<String, String> aSettings, boolean aEnabled) {
-                mId = aId;
-                mName = aName;
-                mPackageName = aPackageName;
-                mJar = aJar;
-                mNamespace = aNamespace;
-                mServers = aServers;
-                mSettings = aSettings;
-                mEnabled = aEnabled;
-                validate();
-        }
+    /**
+     * default constructor
+     * @param id the plugin id
+     * @param name the plugin name
+     * @param jar the plugin jar
+     * @param namespace the namespace 
+     * @param settings map of settings key and value
+     */
+    public FilterConfig(String aId, String aName, String aPackageName, String aJar, String aNamespace,
+            List<String> aServers, Map<String, String> aSettings, boolean aEnabled) {
+        mId = aId;
+        mName = aName;
+        mPackageName = aPackageName;
+        mJar = aJar;
+        mNamespace = aNamespace;
+        mServers = aServers;
+        mSettings = aSettings;
+        mEnabled = aEnabled;
+        validate();
+    }
 
-        /**
-         * @return the id
-         */
-        @Override
-        public String getId() {
-                return mId;
-        }
+    /**
+     * @return the id
+     */
+    @Override
+    public String getId() {
+        return mId;
+    }
 
-        /**
-         * @return the name
-         */
-        @Override
-        public String getName() {
-                return mName;
-        }
+    /**
+     * @return the name
+     */
+    @Override
+    public String getName() {
+        return mName;
+    }
 
-        /**
-         * @return the package 
-         */
-        public String getPackage() {
-                return mPackageName;
-        }
+    /**
+     * @return the package 
+     */
+    public String getPackage() {
+        return mPackageName;
+    }
 
-        /**
-         * @return the jar
-         */
-        @Override
-        public String getJar() {
-                return mJar;
-        }
+    /**
+     * @return the jar
+     */
+    @Override
+    public String getJar() {
+        return mJar;
+    }
 
-        /**
-         * @return the namespace
-         */
-        @Override
-        public String getNamespace() {
-                return mNamespace;
-        }
+    /**
+     * @return the namespace
+     */
+    @Override
+    public String getNamespace() {
+        return mNamespace;
+    }
 
-        /**
-         * @return the list of servers
-         */
-        @Override
-        public List<String> getServers() {
-                return (null == mServers)? null : Collections.unmodifiableList(mServers);
-        }
+    /**
+     * @return the list of servers
+     */
+    @Override
+    public List<String> getServers() {
+        return (null == mServers)? null : Collections.unmodifiableList(mServers);
+    }
 
-        /**
-         * @return the settings
-         */
-        @Override
-        public Map<String, String> getSettings() {
-                return (null == mSettings)? null : Collections.unmodifiableMap(mSettings);
-        }
+    /**
+     * @return the settings
+     */
+    @Override
+    public Map<String, String> getSettings() {
+        return (null == mSettings)? null : Collections.unmodifiableMap(mSettings);
+    }
 
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void validate() {
-                if ((mId != null && mId.length() > 0)
-                                && (mName != null && mName.length() > 0)
-                                && (mJar != null && mJar.length() > 0)
-                                && (mNamespace != null && mNamespace.length() > 0)) {
-                        return;
-                }
-                throw new WebSocketRuntimeException(
-                                "Missing one of the filter configuration, please check your configuration file");
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validate() {
+        if ((mId != null && mId.length() > 0)
+                && (mName != null && mName.length() > 0)
+                && (mJar != null && mJar.length() > 0)
+                && (mNamespace != null && mNamespace.length() > 0)) {
+            return;
         }
+        throw new WebSocketRuntimeException(
+                "Missing one of the filter configuration, please check your configuration file");
+    }
 
-        @Override
-        public String getPackageName() {
-                return mPackageName;
-        }
+    @Override
+    public String getPackageName() {
+        return mPackageName;
+    }
 
-        @Override
-        public boolean getEnabled() {
-                return mEnabled;
-        }
+    @Override
+    public boolean getEnabled() {
+        return mEnabled;
+    }
 }

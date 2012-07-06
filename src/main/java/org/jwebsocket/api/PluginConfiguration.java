@@ -25,64 +25,64 @@ import org.json.JSONObject;
  */
 public interface PluginConfiguration extends Configuration {
 
-        /**
-         * @return the package
-         */
-        String getPackage();
+    /**
+     * @return the package
+     */
+    String getPackage();
 
-        /**
-         * @return the jar
-         */
-        String getJar();
+    /**
+     * @return the jar
+     */
+    String getJar();
 
-        /**
-         * @return the namespace
-         */
-        String getNamespace();
+    /**
+     * @return the namespace
+     */
+    String getNamespace();
 
-        /**
-         * @return the list of servers
-         */
-        List<String> getServers();
+    /**
+     * @return the list of servers
+     */
+    List<String> getServers();
 
-        /**
-         * @return the settings
-         */
-        Map<String, Object> getSettings();
+    /**
+     * @return the settings
+     */
+    Map<String, Object> getSettings();
 
-        /**
-         * 
-         * @param aKey
-         * @param aDefault
-         * @return
-         */
-        String getString(String aKey, String aDefault);
+    /**
+     * 
+     * @param aKey
+     * @param aDefault
+     * @return
+     */
+    String getString(String aKey, String aDefault);
 
-        /**
-         * 
-         * @param aKey
-         * @return
-         */
-        String getString(String aKey);
+    /**
+     * 
+     * @param aKey
+     * @return
+     */
+    String getString(String aKey);
 
-        /**
-         * 
-         * @param aKey
-         * @param aDefault
-         * @return
-         */
-        JSONObject getJSON(String aKey, JSONObject aDefault);
+    /**
+     * 
+     * @param aKey
+     * @param aDefault
+     * @return
+     */
+    JSONObject getJSON(String aKey, JSONObject aDefault);
 
-        /**
-         * 
-         * @param aKey
-         * @return
-         */
-        JSONObject getJSON(String aKey);
-        
-        /**
-         * returns the enabled status of the plug-in.
-         * @return
-         */
-        boolean getEnabled();
+    /**
+     * 
+     * @param aKey
+     * @return
+     */
+    JSONObject getJSON(String aKey);
+    
+    /**
+     * returns the enabled status of the plug-in.
+     * @return
+     */
+    boolean getEnabled();
 }

@@ -21,9 +21,9 @@ package org.jwebsocket.api;
  */
 public interface IUserUniqueIdentifierContainer {
 
-        /**
-         * 
-         * @return The user unique identifier
-         */
-        String getUUID();
+    /**
+     * 
+     * @return The user unique identifier
+     */
+    String getUUID();
 }

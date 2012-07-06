@@ -17,36 +17,36 @@ import org.jwebsocket.kit.WebSocketRuntimeException;
  */
 public class AdminConfigHandler extends JWebSocketConfigHandler implements ConfigHandler {
 
-        @Override
-        public AdminConfig processConfig(XMLStreamReader aStreamReader) {
-                AdminConfig lConfig = new AdminConfig();
+    @Override
+    public AdminConfig processConfig(XMLStreamReader aStreamReader) {
+        AdminConfig lConfig = new AdminConfig();
 
-                try {
-                        while (aStreamReader.hasNext()) {
-                                aStreamReader.next();
-                                if (aStreamReader.isStartElement()) {
-                                        String lElementName = aStreamReader.getLocalName();
-                                        if (lElementName.equals(ELEMENT_PLUGINS)) {
-                                                List<PluginConfig> lPlugins = handlePlugins(aStreamReader);
-                                                lConfig.setPlugins(lPlugins);
-                                        } else if (lElementName.equals(ELEMENT_FILTERS)) {
-                                                List<FilterConfig> lFilters = handleFilters(aStreamReader);
-                                                lConfig.setFilters(lFilters);
-                                        } else {
-                                                // ignore
-                                        }
-                                }
-                                if (aStreamReader.isEndElement()) {
-                                        String lElementName = aStreamReader.getLocalName();
-                                        if (lElementName.equals(JWEBSOCKET)) {
-                                                break;
-                                        }
-                                }
-                        }
-                } catch (XMLStreamException lEx) {
-                        throw new WebSocketRuntimeException("Error parsing jwsMgmtDesk.xml configuration file", lEx);
+        try {
+            while (aStreamReader.hasNext()) {
+                aStreamReader.next();
+                if (aStreamReader.isStartElement()) {
+                    String lElementName = aStreamReader.getLocalName();
+                    if (lElementName.equals(ELEMENT_PLUGINS)) {
+                        List<PluginConfig> lPlugins = handlePlugins(aStreamReader);
+                        lConfig.setPlugins(lPlugins);
+                    } else if (lElementName.equals(ELEMENT_FILTERS)) {
+                        List<FilterConfig> lFilters = handleFilters(aStreamReader);
+                        lConfig.setFilters(lFilters);
+                    } else {
+                        // ignore
+                    }
                 }
-
-                return lConfig;
+                if (aStreamReader.isEndElement()) {
+                    String lElementName = aStreamReader.getLocalName();
+                    if (lElementName.equals(JWEBSOCKET)) {
+                        break;
+                    }
+                }
+            }
+        } catch (XMLStreamException lEx) {
+            throw new WebSocketRuntimeException("Error parsing jwsMgmtDesk.xml configuration file", lEx);
         }
+
+        return lConfig;
+    }
 }

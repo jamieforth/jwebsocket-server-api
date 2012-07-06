@@ -21,21 +21,21 @@ package org.jwebsocket.api;
  */
 public enum WebSocketConnectorStatus {
 
-        /** connector is down, data cannot be send or received */
-        DOWN(0),
-        /** connector is up, data can be send and received */
-        UP(1);
-        
-        private int mStatus;
+    /** connector is down, data cannot be send or received */
+    DOWN(0),
+    /** connector is up, data can be send and received */
+    UP(1);
+    
+    private int mStatus;
 
-        WebSocketConnectorStatus(int aStatus) {
-                mStatus = aStatus;
-        }
+    WebSocketConnectorStatus(int aStatus) {
+        mStatus = aStatus;
+    }
 
-        /**
-         * @return the status int value
-         */
-        public int getStatus() {
-                return mStatus;
-        }
+    /**
+     * @return the status int value
+     */
+    public int getStatus() {
+        return mStatus;
+    }
 }

@@ -24,18 +24,18 @@ import org.jwebsocket.config.xml.ThreadPoolConfig;
  */
 public interface ServerConfiguration extends Configuration {
 
-        /**
-         * @return the jar file name
-         */
-        String getJar();
+    /**
+     * @return the jar file name
+     */
+    String getJar();
 
-        /**
-         * @return the thread pool configuration
-         */
-        ThreadPoolConfig getThreadPoolConfig();
+    /**
+     * @return the thread pool configuration
+     */
+    ThreadPoolConfig getThreadPoolConfig();
 
-        /**
-         * @return the settings
-         */
-        Map<String, Object> getSettings();
+    /**
+     * @return the settings
+     */
+    Map<String, Object> getSettings();
 }

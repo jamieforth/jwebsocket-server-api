@@ -26,84 +26,84 @@ import org.jwebsocket.token.Token;
  */
 public class RRPC implements ITokenizable {
 
-        private String procedureName;
-        private String responseType;
-        private Integer timeout;
-        private Map<String, Object> args;
-        public static final String PROCEDURE_NAME = "$pn";
-        public static final String RESPONSE_TYPE = "$rt";
-        public static final String ARGUMENTS = "$args";
+    private String procedureName;
+    private String responseType;
+    private Integer timeout;
+    private Map<String, Object> args;
+    public static final String PROCEDURE_NAME = "$pn";
+    public static final String RESPONSE_TYPE = "$rt";
+    public static final String ARGUMENTS = "$args";
 
-        /**
-         * Create a new RRPC
-         * 
-         * @param aProcedureName
-         * @param aResponseType
-         * @param aTimeout 
-         */
-        public RRPC(String aProcedureName, String aResponseType, Integer aTimeout) {
-                this.procedureName = aProcedureName;
-                this.responseType = aResponseType;
-                this.timeout = aTimeout;
-                this.args = new FastMap<String, Object>();
-        }
+    /**
+     * Create a new RRPC
+     * 
+     * @param aProcedureName
+     * @param aResponseType
+     * @param aTimeout 
+     */
+    public RRPC(String aProcedureName, String aResponseType, Integer aTimeout) {
+        this.procedureName = aProcedureName;
+        this.responseType = aResponseType;
+        this.timeout = aTimeout;
+        this.args = new FastMap<String, Object>();
+    }
 
-        /**
-         * Create a new RRPC
-         * 
-         * @param aProcedureName
-         * @param aResponseType
-         * @param aTimeout
-         * @param aArgs 
-         */
-        public RRPC(String aProcedureName, String aResponseType, Integer aTimeout, Map<String, Object> aArgs) {
-                this.procedureName = aProcedureName;
-                this.responseType = aResponseType;
-                this.timeout = aTimeout;
-                this.args = aArgs;
-        }
+    /**
+     * Create a new RRPC
+     * 
+     * @param aProcedureName
+     * @param aResponseType
+     * @param aTimeout
+     * @param aArgs 
+     */
+    public RRPC(String aProcedureName, String aResponseType, Integer aTimeout, Map<String, Object> aArgs) {
+        this.procedureName = aProcedureName;
+        this.responseType = aResponseType;
+        this.timeout = aTimeout;
+        this.args = aArgs;
+    }
 
-        public String getProcedureName() {
-                return procedureName;
-        }
+    public String getProcedureName() {
+        return procedureName;
+    }
 
-        public void setProcedureName(String procedureName) {
-                this.procedureName = procedureName;
-        }
+    public void setProcedureName(String procedureName) {
+        this.procedureName = procedureName;
+    }
 
-        public String getResponseType() {
-                return responseType;
-        }
+    public String getResponseType() {
+        return responseType;
+    }
 
-        public void setResponseType(String responseType) {
-                this.responseType = responseType;
-        }
+    public void setResponseType(String responseType) {
+        this.responseType = responseType;
+    }
 
-        public Integer getTimeout() {
-                return timeout;
-        }
+    public Integer getTimeout() {
+        return timeout;
+    }
 
-        public void setTimeout(Integer timeout) {
-                this.timeout = timeout;
-        }
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
 
-        public Map<String, Object> getArgs() {
-                return args;
-        }
+    public Map<String, Object> getArgs() {
+        return args;
+    }
 
-        public void setArgs(Map<String, Object> args) {
-                this.args = args;
-        }
+    public void setArgs(Map<String, Object> args) {
+        this.args = args;
+    }
 
-        @Override
-        public void readFromToken(Token aToken) {
-                throw new UnsupportedOperationException("Not supported yet.");
-        }
+    @Override
+    public void readFromToken(Token aToken) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
-        @Override
-        public void writeToToken(Token aToken) {
-                aToken.setString(PROCEDURE_NAME, procedureName);
-                aToken.setString(RESPONSE_TYPE, responseType);
-                aToken.setMap(ARGUMENTS, args);
-        }
+    @Override
+    public void writeToToken(Token aToken) {
+        aToken.setString(PROCEDURE_NAME, procedureName);
+        aToken.setString(RESPONSE_TYPE, responseType);
+        aToken.setMap(ARGUMENTS, args);
+    }
 }

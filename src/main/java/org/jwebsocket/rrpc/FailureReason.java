@@ -21,13 +21,13 @@ package org.jwebsocket.rrpc;
  */
 public enum FailureReason {
 
-        CONNECTOR_STOPPED,
+    CONNECTOR_STOPPED,
 
-        REMOTE_PROCEDURE_NOT_EXISTS,
-        
-        INVALID_RESPONSE,
+    REMOTE_PROCEDURE_NOT_EXISTS,
+    
+    INVALID_RESPONSE,
 
-        TIMEOUT,
-        
-        SERVER_SHUTDOWN
+    TIMEOUT,
+    
+    SERVER_SHUTDOWN
 }

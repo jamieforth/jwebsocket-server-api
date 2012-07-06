@@ -21,7 +21,7 @@ package org.jwebsocket.exception;
  */
 public class MissingTokenSender extends Exception {
 
-        public MissingTokenSender(String string) {
-                super(string);
-        }
+    public MissingTokenSender(String string) {
+        super(string);
+    }
 }

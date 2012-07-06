@@ -36,22 +36,22 @@ import org.jwebsocket.api.WebSocketConnector;
  * completed state.
  * 
  * <pre>
- *                                      +---------------------------+
- *                                      | Completed successfully    |
- *                                      +---------------------------+
- *                                 +---->      isDone() = <b>true</b>|
+ *                      +---------------------------+
+ *                      | Completed successfully    |
+ *                      +---------------------------+
+ *                 +---->      isDone() = <b>true</b>|
  * +--------------------------+    |    |   isSuccess() = <b>true</b>|
- * |        Uncompleted       |    |    +===========================+
+ * |    Uncompleted       |    |    +===========================+
  * +--------------------------+    |    | Completed with failure    |
  * |      isDone() = <b>false</b>  |    +---------------------------+
  * |   isSuccess() = false    |----+---->   isDone() = <b>true</b>  |
  * | isCancelled() = false    |    |    | getCause() = <b>non-null</b>|
  * |    getCause() = null     |    |    +===========================+
  * +--------------------------+    |    | Completed by cancellation |
- *                                 |    +---------------------------+
- *                                 +---->      isDone() = <b>true</b>|
- *                                      | isCancelled() = <b>true</b>|
- *                                      +---------------------------+
+ *                 |    +---------------------------+
+ *                 +---->      isDone() = <b>true</b>|
+ *                      | isCancelled() = <b>true</b>|
+ *                      +---------------------------+
  * </pre>
  * 
  * Various methods are provided to let you check if the I/O operation has been
@@ -92,8 +92,8 @@ public interface IOFuture {
    * failed.
    *
    * @return the cause of the failure.
-   *         {@code null} if succeeded or this future is not
-   *         completed yet.
+   *     {@code null} if succeeded or this future is not
+   *     completed yet.
    */
   Throwable getCause();
 
@@ -102,8 +102,8 @@ public interface IOFuture {
    * and notifies all listeners if canceled successfully.
    *
    * @return {@code true} if and only if the operation has been canceled.
-   *         {@code false} if the operation can't be canceled or is already
-   *         completed.
+   *     {@code false} if the operation can't be canceled or is already
+   *     completed.
    */
   boolean cancel();
 
@@ -112,8 +112,8 @@ public interface IOFuture {
    * listeners.
    *
    * @return {@code true} if and only if successfully marked this future as
-   *         a success. Otherwise {@code false} because this future is
-   *         already marked as either a success or a failure.
+   *     a success. Otherwise {@code false} because this future is
+   *     already marked as either a success or a failure.
    */
   boolean setSuccess();
 
@@ -122,8 +122,8 @@ public interface IOFuture {
    * listeners.
    *
    * @return {@code true} if and only if successfully marked this future as
-   *         a failure. Otherwise {@code false} because this future is
-   *         already marked as either a success or a failure.
+   *     a failure. Otherwise {@code false} because this future is
+   *     already marked as either a success or a failure.
    */
   boolean setFailure(Throwable cause);
 
