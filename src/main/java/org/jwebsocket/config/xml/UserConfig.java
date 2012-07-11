@@ -16,7 +16,6 @@ package org.jwebsocket.config.xml;
 
 import java.util.Collections;
 import java.util.List;
-
 import org.jwebsocket.config.Config;
 import org.jwebsocket.kit.WebSocketRuntimeException;
 

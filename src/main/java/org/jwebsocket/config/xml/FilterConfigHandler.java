@@ -16,12 +16,10 @@ package org.jwebsocket.config.xml;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
 import org.jwebsocket.config.Config;
 import org.jwebsocket.config.ConfigHandler;
 
@@ -78,7 +76,7 @@ public class FilterConfigHandler implements ConfigHandler {
                     aStreamReader.next();
                     try {
                         lEnabled = Boolean.parseBoolean(aStreamReader.getText());
-                    } catch (Exception ex) {
+                    } catch (RuntimeException ex) {
                         // ignore, per default true
                     }
                 }else {

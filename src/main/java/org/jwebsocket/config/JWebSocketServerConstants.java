@@ -62,12 +62,12 @@ public final class JWebSocketServerConstants {
     /**
      * Default engine for jWebSocket server.
      */
-    public static String DEFAULT_ENGINE = "tcp";
+    public final static String DEFAULT_ENGINE = "tcp";
     /**
      * Default node id if non given in jWebSocket.xml.
      * Empty means do not use node-id for single stand-alone systems
      */
-    public static String DEFAULT_NODE_ID = "";
+    public final static String DEFAULT_NODE_ID = "";
     
     /**
      * the default maximum number of connections allowed by an engine
