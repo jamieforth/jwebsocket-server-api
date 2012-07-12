@@ -288,16 +288,14 @@ public class BaseConnector implements WebSocketConnector {
 
     @Override
     public String getId() {
-        // FindBug: The code synchronizes on a boxed primitive constant, such as an Integer.
-      //  synchronized(mCounter) {
+        synchronized (mCounter) {
             if (null == mUniqueId) {
                 String lNodeId = JWebSocketConfig.getConfig().getNodeId();
                 mUniqueId = ((lNodeId != null && lNodeId.length() > 0) ? lNodeId + "." : "")
-                        + String.valueOf(getRemotePort())
-                        + "." + mCounter++;
+                        + String.valueOf(getRemotePort()) + "." + mCounter++;
             }
             return mUniqueId;
-        //}    
+        }
     }
 
     @Override
