@@ -15,6 +15,7 @@
 package org.jwebsocket.config;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
@@ -45,7 +46,7 @@ import org.jwebsocket.util.Tools;
  */
 public class JWebSocketConfig implements Config {
 
-    private static Logger mLog = null;
+    private volatile static Logger mLog = null;
     private final String mNodeId;
     private final String mProtocol;
     private final String mLibraryFolder;
@@ -151,7 +152,7 @@ public class JWebSocketConfig implements Config {
             try {
                 lDir = new File("../../../rte/jWebSocket-1.0/libs");
                 lFiles = FileUtils.listFiles(lDir, lFileFilter, lDirFilter);
-            } catch (Exception lEx) {
+            } catch (RuntimeException lEx) {
                 lFiles = null;
             }
             if (null != lFiles && !lFiles.isEmpty()) {
@@ -347,7 +348,7 @@ public class JWebSocketConfig implements Config {
             if (mLog.isDebugEnabled()) {
                 mLog.debug("Console-Mode: Logs successfully configured by '" + lLog4JPath + "'.");
             }
-        } catch (Exception lEx) {
+        } catch (RuntimeException lEx) {
             System.out.println(lEx.getClass().getSimpleName() + " configuring logs: " + lEx.getMessage());
         }
     }
@@ -373,7 +374,7 @@ public class JWebSocketConfig implements Config {
             if (mLog.isDebugEnabled()) {
                 mLog.debug("WebApp-Mode: Logs successfully configured by '" + lLog4JPath + "'.");
             }
-        } catch (Exception lEx) {
+        } catch (RuntimeException lEx) {
             System.out.println(lEx.getClass().getSimpleName() + " configuring logs: " + lEx.getMessage());
         }
 
@@ -921,7 +922,7 @@ public class JWebSocketConfig implements Config {
             } else {
                 lURL = new URL("file://" + aPath);
             }
-        } catch (Exception lEx) {
+        } catch (MalformedURLException lEx) {
             System.out.println(lEx.getClass().getSimpleName() + ": " + lEx.getMessage());
         }
         return lURL;

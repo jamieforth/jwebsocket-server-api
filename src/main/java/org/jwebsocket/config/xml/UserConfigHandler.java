@@ -15,7 +15,6 @@
 package org.jwebsocket.config.xml;
 
 import java.util.List;
-
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javolution.util.FastList;

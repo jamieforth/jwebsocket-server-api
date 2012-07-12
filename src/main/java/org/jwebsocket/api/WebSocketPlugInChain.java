@@ -15,10 +15,9 @@
 //    ---------------------------------------------------------------------------
 package org.jwebsocket.api;
 
+import java.util.List;
 import org.jwebsocket.kit.CloseReason;
 import org.jwebsocket.kit.PlugInResponse;
-import java.util.List;
-import org.jwebsocket.token.Token;
 
 /**
  * A plug-in chain maintains a map of plug-ins. A server in the jWebSocket model

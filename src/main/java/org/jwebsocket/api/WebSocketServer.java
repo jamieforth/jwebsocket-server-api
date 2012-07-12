@@ -17,7 +17,6 @@ package org.jwebsocket.api;
 
 import java.util.List;
 import java.util.Map;
-
 import org.jwebsocket.async.IOFuture;
 import org.jwebsocket.kit.BroadcastOptions;
 import org.jwebsocket.kit.CloseReason;

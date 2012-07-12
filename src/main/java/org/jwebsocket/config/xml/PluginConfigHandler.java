@@ -77,7 +77,7 @@ public class PluginConfigHandler implements ConfigHandler {
                     aStreamReader.next();
                     try {
                         lEnabled = Boolean.parseBoolean(aStreamReader.getText());
-                    } catch (Exception ex) {
+                    } catch (RuntimeException ex) {
                         // ignore, per default true
                     }
                 } else {

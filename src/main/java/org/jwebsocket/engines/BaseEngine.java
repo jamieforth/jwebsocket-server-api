@@ -16,7 +16,6 @@
 package org.jwebsocket.engines;
 
 import java.util.Map;
-import javolution.util.FastList;
 import javolution.util.FastMap;
 import org.jwebsocket.api.*;
 import org.jwebsocket.config.JWebSocketCommonConstants;
@@ -62,7 +61,7 @@ public class BaseEngine implements WebSocketEngine {
             for (WebSocketConnector lConnector : mConnectors.values()) {
                 lConnector.stopConnector(aCloseReason);
             }
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             // log.info("Exception on sleep " + ex.getMessage());
         }
         // this method will be overridden by engine implementations.

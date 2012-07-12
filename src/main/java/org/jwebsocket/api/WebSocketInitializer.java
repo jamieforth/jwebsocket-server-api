@@ -16,7 +16,6 @@ package org.jwebsocket.api;
 
 import java.util.List;
 import java.util.Map;
-
 import org.jwebsocket.config.JWebSocketConfig;
 
 /**

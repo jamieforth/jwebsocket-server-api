@@ -28,6 +28,7 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.jwebsocket.config.Config;
 import org.jwebsocket.config.ConfigHandler;
@@ -454,7 +455,9 @@ public class JWebSocketConfigHandler implements ConfigHandler {
     protected void saveChange(Document aDoc, String aPath) throws IOException {
         XMLOutputter lXmlOutput = new XMLOutputter();
         lXmlOutput.setFormat(Format.getPrettyFormat());
-        lXmlOutput.output(aDoc, new FileWriter(aPath));
+        FileWriter fw =  new FileWriter(aPath);
+        lXmlOutput.output(aDoc,fw);
+        fw.close();
     }
 
     public void setEnabledPlugIn(String aId, Boolean aEnabled) throws Exception {
@@ -665,7 +668,7 @@ public class JWebSocketConfigHandler implements ConfigHandler {
                             JSONObject lJSON = null;
                             try {
                                 lJSON = new JSONObject(lValue);
-                            } catch (Exception lEx) {
+                            } catch (JSONException lEx) {
                                 // TODO: handle invalid JSON code in settings properly!
                             }
                             lSettings.put(lKey, lJSON);

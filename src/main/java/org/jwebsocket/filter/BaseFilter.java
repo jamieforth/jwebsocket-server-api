@@ -15,7 +15,6 @@
 //    ---------------------------------------------------------------------------
 package org.jwebsocket.filter;
 
-import org.jwebsocket.kit.FilterResponse;
 import org.jwebsocket.api.FilterConfiguration;
 import org.jwebsocket.api.WebSocketConnector;
 import org.jwebsocket.api.WebSocketFilter;
@@ -23,6 +22,7 @@ import org.jwebsocket.api.WebSocketFilterChain;
 import org.jwebsocket.api.WebSocketPacket;
 import org.jwebsocket.api.WebSocketServer;
 import org.jwebsocket.config.xml.FilterConfig;
+import org.jwebsocket.kit.FilterResponse;
 
 /**
  * 

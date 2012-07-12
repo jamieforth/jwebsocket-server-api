@@ -64,7 +64,7 @@ public class BasePlugInChain implements WebSocketPlugInChain {
                             + lEx.getMessage());
                 }
             }
-        } catch (Exception lEx) {
+        } catch (RuntimeException lEx) {
             mLog.error("Engine '" + aEngine.getId()
                     + "' started: "
                     + lEx.getClass().getSimpleName() + ": "
@@ -94,7 +94,7 @@ public class BasePlugInChain implements WebSocketPlugInChain {
                             + ": " + lEx.getMessage());
                 }
             }
-        } catch (Exception lEx) {
+        } catch (RuntimeException lEx) {
             mLog.error("Engine '" + aEngine.getId()
                     + "' stopped: "
                     + lEx.getClass().getSimpleName() + ": "
@@ -127,7 +127,7 @@ public class BasePlugInChain implements WebSocketPlugInChain {
                     }
                 }
             }
-        } catch (Exception lEx) {
+        } catch (RuntimeException lEx) {
             mLog.error("Connector '"
                     + aConnector.getId() + "' started (2): "
                     + lEx.getClass().getSimpleName() + ": "
@@ -150,7 +150,7 @@ public class BasePlugInChain implements WebSocketPlugInChain {
             if (lPlugIn.getEnabled()) {
                 try {
                     lPlugIn.processPacket(lPluginResponse, aConnector, aDataPacket);
-                } catch (Exception lEx) {
+                } catch (RuntimeException lEx) {
                     mLog.error("Processing packet at connector '"
                             + aConnector.getId()
                             + "', plug-in '"
@@ -180,7 +180,7 @@ public class BasePlugInChain implements WebSocketPlugInChain {
             if (lPlugIn.getEnabled()) {
                 try {
                     lPlugIn.connectorStopped(aConnector, aCloseReason);
-                } catch (Exception lEx) {
+                } catch (RuntimeException lEx) {
                     mLog.error("Connector '"
                             + aConnector.getId()
                             + "' stopped at plug-in '"

@@ -15,9 +15,9 @@
 //    ---------------------------------------------------------------------------
 package org.jwebsocket.api;
 
+import java.net.InetAddress;
 import org.jwebsocket.async.IOFuture;
 import org.jwebsocket.kit.CloseReason;
-import java.net.InetAddress;
 import org.jwebsocket.kit.RequestHeader;
 import org.jwebsocket.kit.WebSocketException;
 import org.jwebsocket.kit.WebSocketSession;
